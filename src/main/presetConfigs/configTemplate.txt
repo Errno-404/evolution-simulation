@@ -1,0 +1,1 @@
+mapHeight-mapWidth-initGrass-mapType(0,1)---plantEnergy-dailyGrowth-growthType(0,1)-preferredpercentage-preferredChance---initAnimalCount-initAnimalEnergy-readyToBreedEnergy-energyLoss-genomeLength---minMutations-maxMutations-mutatorType(0,1)---BehaviourType(0,1)---saveOrNot

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="wraper" alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: linear-gradient(from 14% 0% to 0% 100%, rgba(251,134,107,1) 14%, rgba(254,153,79,1) 100%);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agh.ics.oop.gui.ConfigController">
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+        </rowConstraints>
+        <VBox GridPane.columnIndex="1" />
+        <VBox style="-fx-border-color: rgba(1, 2, 3, 0.1); -fx-border-style: solid; -fx-border-width: 5 0 5 0;" GridPane.rowIndex="1">
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" styleClass="titles" text="Mapa">
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+            </Label>
+            <GridPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <RadioButton fx:id="globe" mnemonicParsing="false" onAction="#getMapType" prefHeight="55.0" prefWidth="206.0" text="Globe">
+                        <toggleGroup>
+                            <ToggleGroup fx:id="mapType" />
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="portal" mnemonicParsing="false" onAction="#getMapType" prefHeight="42.0" prefWidth="216.0" text="Portal" toggleGroup="$mapType" />
+                </HBox>
+                <Slider fx:id="mapHeightSlider" GridPane.columnIndex="1" />
+                <Slider fx:id="mapWidthSlider" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label prefHeight="39.0" prefWidth="343.0" text="Wysokość mapy" />
+                <Label prefHeight="81.0" prefWidth="325.0" text="Szerokość mapy" GridPane.rowIndex="1" />
+                <Label prefHeight="34.0" prefWidth="300.0" text="Typ mapy" GridPane.rowIndex="2" />
+            <TextField fx:id="mapHeightTextField" GridPane.columnIndex="2" />
+            <TextField fx:id="mapWidthTextField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            </GridPane>
+          <padding>
+              <Insets bottom="30.0" left="30.0" right="60.0" top="30.0" />
+          </padding>
+        </VBox>
+        <VBox style="-fx-border-color: rgba(1, 2, 3, 0.1); -fx-border-width: 0 0 5 0;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="16.0" prefWidth="678.0" styleClass="titles" text="Trawa">
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+            </Label>
+            <GridPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <RadioButton fx:id="equator" mnemonicParsing="false" onAction="#getPlantType" prefHeight="55.0" prefWidth="206.0" text="Equator">
+                        <toggleGroup>
+                            <ToggleGroup fx:id="plantType" />
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="graveyard" mnemonicParsing="false" onAction="#getPlantType" prefHeight="42.0" prefWidth="216.0" text="Graveyard" toggleGroup="$plantType" />
+                </HBox>
+                <Slider fx:id="initGrassSlider" GridPane.columnIndex="1" />
+                <Slider fx:id="dailyGrassSlider" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Początkowa liczba roślin" />
+                <Label text="Dzienny przyrost liczby roślin" GridPane.rowIndex="1" />
+                <Label text="Wariant wzrostu roślin" GridPane.rowIndex="5" />
+                <Label text="\% preferowanych miejsc" GridPane.rowIndex="2" />
+                <Label text="Energia po zjedzeniu rośliny" GridPane.rowIndex="4" />
+                <Slider fx:id="percentageGrassSlider" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Spinner fx:id="grassEnergySpinner" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="\% szans na wybranie pola lepszego" GridPane.rowIndex="3" />
+                <Slider fx:id="betterGrassSlider" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="initialGrassCountTextField" GridPane.columnIndex="2" />
+            <TextField fx:id="dailyGrassTextField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="percentageTextField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="chanceTextField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            </GridPane>
+          <padding>
+              <Insets bottom="30.0" left="60.0" right="30.0" top="30.0" />
+          </padding>
+        </VBox>
+        <VBox style="-fx-border-color: rgba(1, 2, 3, 0.1); -fx-border-width: 0 0 5 0;" GridPane.rowIndex="2">
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="16.0" prefWidth="678.0" styleClass="titles" text="Zwierzęta">
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+            </Label>
+            <GridPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <RadioButton fx:id="randomBehaviour" mnemonicParsing="false" onAction="#getAnimalBehaviour" prefHeight="55.0" prefWidth="206.0" text="Random">
+                        <toggleGroup>
+                            <ToggleGroup fx:id="behaviour" />
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="notRandomBehaviour" mnemonicParsing="false" onAction="#getAnimalBehaviour" prefHeight="42.0" prefWidth="216.0" text="NotRandom" toggleGroup="$behaviour" />
+                </HBox>
+                <Label text="Początkowa liczba zwierząt" />
+                <Label text="Początkowa energia zwierząt" GridPane.rowIndex="1" />
+                <Label text="Zahowanie zwierzęcia" GridPane.rowIndex="4" />
+                <Label text="Energia najedzonego zwierzęcia" GridPane.rowIndex="2" />
+                <Label text="Straty energii przy rozmnażaniu" GridPane.rowIndex="3" />
+                <Slider fx:id="happyAnimalSlider" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Spinner fx:id="animalEnergySpinner" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Spinner fx:id="initAnimalSpinner" GridPane.columnIndex="1" />
+                <Slider fx:id="energyLossSlider" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="happyAnimalEnergyTextField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="energyLossTextField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            </GridPane>
+          <padding>
+              <Insets bottom="30.0" left="30.0" right="60.0" top="30.0" />
+          </padding>
+        </VBox>
+        <VBox style="-fx-border-color: rgba(1, 2, 3, 0.1); -fx-border-width: 5 0 5 0;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="16.0" prefWidth="678.0" styleClass="titles" text="Mutacje">
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+            </Label>
+            <GridPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <RadioButton fx:id="randomMutation" mnemonicParsing="false" onAction="#getMutationType" prefHeight="55.0" prefWidth="206.0" text="Random">
+                        <toggleGroup>
+                            <ToggleGroup fx:id="mutation" />
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="notRandomMutation" mnemonicParsing="false" onAction="#getMutationType" prefHeight="42.0" prefWidth="216.0" text="Normal" toggleGroup="$mutation" />
+                </HBox>
+                <Slider fx:id="genomeSlider" GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
+                </Slider>
+                <Label text="Długość genomu" />
+                <Label text="Max. liczba mutacji" GridPane.rowIndex="1" />
+                <Label prefHeight="96.0" prefWidth="250.0" text="Wariant mutacji" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
+                </Label>
+                <Label prefHeight="60.0" prefWidth="359.0" text="Min. liczba mutacji" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
+                </Label>
+                <Spinner fx:id="maxMutSpinner" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Spinner fx:id="minMutSpinner" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="genomeLengthTextField" GridPane.columnIndex="2" />
+            </GridPane>
+          <padding>
+              <Insets bottom="30.0" left="60.0" right="30.0" top="30.0" />
+          </padding>
+        </VBox>
+        <VBox>
+            <GridPane fx:id="myGridPane">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+                <Label prefHeight="58.0" prefWidth="300.0" text="Wybór pliku konfiguracyjnego" />
+                <ChoiceBox fx:id="myChoiceBox" GridPane.columnIndex="1" GridPane.halignment="LEFT" />
+                <CheckBox fx:id="saveToFile" mnemonicParsing="false" onAction="#getStatsSave" text="Zapisywanie statystyk do pliku" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            </GridPane>
+          <padding>
+              <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+          </padding>
+        </VBox>
+    </GridPane>
+   <Button fx:id="startButton" alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#startSimulation" style="-fx-background-color: white;" text="Nowa symulacja" textAlignment="CENTER" textFill="#ff5a19">
+      <VBox.margin>
+         <Insets bottom="10.0" top="10.0" />
+      </VBox.margin>
+      <font>
+         <Font size="19.0" />
+      </font>
+   </Button>
+</VBox>
